@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trackify — Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="Trackify.css" />
+</head>
+<body>
+
+<div class="app">
+
+  
+  <div class="topbar">
+    <div class="topbar-left">
+      <span class="app-title">Trackify</span>
+      <span class="date-chip" id="dateChip"></span>
+    </div>
+    <div class="streak-badge">
+      <div class="streak-dot"></div>
+      <span id="streakLabel">0 day streak</span>
+    </div>
+  </div>
+
+  
+  <div class="summary-row">
+    <div class="stat">
+      <div class="stat-label">Today</div>
+      <div class="stat-val" id="doneCount">0<span class="denom"> / <span id="totalCount">0</span></span></div>
+      <div class="stat-sub">completed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Rate</div>
+      <div class="stat-val" id="rateVal">—</div>
+      <div class="stat-sub">this week</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Best streak</div>
+      <div class="stat-val" id="bestStreakVal">0</div>
+      <div class="stat-sub">days in a row</div>
+    </div>
+  </div>
+
+  
+  <div class="week-bar" id="weekBar"></div>
+
+  
+  <div class="section-header">
+    <span class="section-title">My Habits</span>
+    <button class="add-btn" id="addToggle">+ Add habit</button>
+  </div>
+
+  
+  <div class="add-form" id="addForm">
+    <div class="form-label">Habit name</div>
+    <input class="form-input" id="habitName" placeholder="e.g. Morning run" maxlength="40" />
+
+    <div class="form-label">Pick an icon</div>
+    <div class="emoji-pick" id="emojiPick"></div>
+
+    <div class="form-label">Frequency</div>
+    <select class="form-input" id="freqSelect" style="cursor:pointer;">
+      <option value="Daily">Daily</option>
+      <option value="Weekdays">Weekdays</option>
+      <option value="3x / week">3x / week</option>
+      <option value="Weekly">Weekly</option>
+    </select>
+
+    <div class="form-row">
+      <button class="confirm-btn" id="saveHabit">Add habit</button>
+      <button class="cancel-btn" id="cancelAdd">Cancel</button>
+    </div>
+  </div>
+
+  
+  <div class="habits-list" id="habitsList"></div>
+  <div class="empty-state" id="emptyState">No habits yet — add one above to get started.</div>
+
+  
+  <div class="progress-footer" id="progressFooter" style="display:none;">
+    <div class="progress-label">
+      <span class="progress-text">Daily progress</span>
+      <span class="progress-pct" id="progressPct">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill" style="width:0%"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="Trackify.js"></script>
+</body>
+</html>
